@@ -16,7 +16,7 @@ Before=ignition-fetch.service
 OnFailure=emergency.target
 OnFailureJobMode=isolate
 
-# See hack in ignition-check-neednet, as well as coreos-copy-firstboot-network.service.
+# See hack in ignition-check-neednet.
 After=dracut-cmdline.service
 Before=dracut-initqueue.service
 
