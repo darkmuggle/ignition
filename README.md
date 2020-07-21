@@ -32,24 +32,20 @@ Example:
 podman run --rm -i quay.io/coreos/ignition-validate - < myconfig.ign
 ```
 
-## Dracut
-
-For distributions that use dracut, there is an
-[ignition-dracut](https://github.com/coreos/ignition-dracut)
-repo which contains scripts and systemd units for boot-time
-execution. But it's very likely that distributions will have
-to do additional work in order to properly integrate with
-Ignition.
-
 ## Branches
 
 There are two branches:
-- `master` works with the `master` branch of ignition-dracut
-  and is currently used by Fedora CoreOS, which targets
-  Ignition v2 (spec 3).
+- `master`: uses Ignition V2 (spec 3) and is used by Fedora CoreOS
+  and Red Hat CoreOS starting with version 46.82.
 - `spec2x` works with the `spec2x` branch of ignition-dracut
   and is currently used by CL and RHEL CoreOS, which (for
   now) targets Ignition v0.x (spec 2).
+
+## Legacy Ingition-Dracut:
+
+With commit d1f1417dd95425bbc1a5dcdebc777b93ecb77c46 the old [Ingition-Dracut](https://github.com/coreos/ignition-dracut) commit 6b1d128c6ba2d77825d214ada238a4826e420d40 was merged into Ignition itself. In [Fedora Tracker #511](https://github.com/coreos/fedora-coreos-tracker/issues/511) it was proposed and accepted to merge the two repos together.
+
+The CoreOS specific Dracut modules have been moved into [Fedora CoreOS Config](https://github.com/coreos/fedora-coreos-config).
 
 [getting started]: doc/getting-started.md
 [issues]:  https://github.com/coreos/ignition/issues/new/choose
